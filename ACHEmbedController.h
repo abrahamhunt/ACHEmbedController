@@ -15,6 +15,7 @@
 @interface ACHEmbedController : UIViewController
 
 @property (nonatomic,strong) NSArray *embedSegueIdentifiers;
+@property (nonatomic) NSTimeInterval fadeDuration;
 - (void)swapToControllerAtIndex:(NSInteger)index;
 
 @end
