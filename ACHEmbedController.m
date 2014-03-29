@@ -8,6 +8,8 @@
 
 #import "ACHEmbedController.h"
 
+#define kDefaultDuration 0.5f
+
 @implementation CustomACHEmbedSegue
 
 - (void)perform
@@ -24,6 +26,12 @@
 @end
 
 @implementation ACHEmbedController
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.fadeDuration = kDefaultDuration;
+}
 
 - (void)viewDidLoad
 {
@@ -90,7 +98,7 @@
 - (void)swapFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController
 {
     [fromViewController willMoveToParentViewController:nil];
-    [self transitionFromViewController:fromViewController toViewController:toViewController duration:1.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
+    [self transitionFromViewController:fromViewController toViewController:toViewController duration:self.fadeDuration options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
         [toViewController didMoveToParentViewController:self];
     }];
 }
