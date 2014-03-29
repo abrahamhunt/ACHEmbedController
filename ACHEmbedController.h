@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomEmbedSegue : UIStoryboardSegue
+@interface CustomACHEmbedSegue : UIStoryboardSegue
 
 @end
 
