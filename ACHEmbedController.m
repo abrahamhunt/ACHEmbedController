@@ -45,7 +45,6 @@
 {
     UIViewController *destinationController = segue.destinationViewController;
     [self addChildViewController:destinationController];
-    destinationController.view.frame = self.view.bounds;
     [self.embeddedControllers setObject:destinationController forKey:segue.identifier];
     NSInteger embedIndex = [self.embedSegueIdentifiers indexOfObject:segue.identifier];
     if (embedIndex == 0 && self.currentIndex == -1)//initial setup
